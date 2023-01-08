@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{url_for('static',filename='assets/img/home-bg.jpg')  }}       '  ) ">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Admin Pannel</h1>
+                            <span class="subheading">Akash Mehta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+<h1> Action</h1>
+  <a href="/edit/0"><button class="btn btn-primary">Add a new post</button></a>
+  <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+  
+
+<hr>
+        <h1>Upload post</h1>
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+    <input type="file" name="file1" value = "Upload" >      
+    <button class="btn btn-primary text-uppercase">submit</button>   
+    </form>
+
+
+<h1>Edit</h1>
+                <hr>
+                    <!-- Post preview-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Title</th>
+      <th scope="col">By</th>
+      <th scope="col">Date</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+<!-- for loop using jinja -->
+    {% for post in posts %}
+
+    <tr>
+      <th scope="row">{{post.sno}}</th>
+      <td>{{post.title}}</td>
+      <td>{{post.by}}</td>
+      <td>{{post.date}}</td>
+      <td><a href="/edit/{{post.sno}}"><button class="btn btn-primary text-uppercase" >Edit</button></a></td>
+      <td><a href="/delete/{{post.sno}}"><button class="btn btn-primary">Delete</button></a></td>
+    </tr>
+    
+
+    {% endfor %}
+  </tbody>
+</table>
+                    <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        {% endblock %}

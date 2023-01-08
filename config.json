@@ -1,0 +1,28 @@
+{
+    "params":
+    {
+    "loacal server" : "True",
+    "local_uri" :  "mysql://root:@localhost/sitename",
+    "prod_uri" :  "mysql://root:@localhost/sitename",
+    "fb_url"  :   "http//facebook.com",
+    "tw_url"  :   "http//twitter.com",
+    "inta_url" :  "http//instagram.com",
+    "git_url"  :  "http//github.com",
+    "title_name" : "BADRINATH SAFARI",
+    "post_name"  : "Badrinath Safari",
+    "email_log"  : "any@gmail.com",
+    "email_pass"  : "any",
+    "about_text"  : "have you ever imagin how beautiful it is to travel around the world. We enthusiastic people love to explore",
+    "no_of_post"  : 2,
+    "admin_user"  : "admin",
+    "admin_pass"  : "passward",
+    "upload_location" : "location"
+    }
+
+
+
+
+
+
+
+}
